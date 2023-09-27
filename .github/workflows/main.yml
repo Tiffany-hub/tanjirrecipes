@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'  # Specify Node.js version 16
 
       - name: Install dependencies
         run: npm install
@@ -25,6 +25,6 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        run: npx gh-pages@6.0.0 -d build
+        run: npx gh-pages@3.2.3 -d build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
